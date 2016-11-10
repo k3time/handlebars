@@ -16,6 +16,9 @@ var expressHbs = require('express-handlebars'); // Third party module
 app.engine('hbs', expressHbs({extname:'hbs', defaultLayout:'layout.hbs'}));
 app.set('view engine', 'hbs');
 
+
+var chalk = require('chalk'); // to print colourful console in command liine
+
 /*
 //Following code to create a server
 
@@ -28,7 +31,8 @@ app.get('/logout', routes.logoutHandler);
 app.get('/loginSuccess', routes.loginSuccessHandler);
 app.post('/city', routes.cityHandler);
 app.get('/cancel', function(req, res){
-	res.send('Cancel');
+	console.log(chalk.red('Cancel button clicked'));
+	res.send('This is response whenever you click cancel button. Please see app.js');
 });
 app.get('/student', routes.studentHandler);
 app.get('/player/:name/:country', routes.playerHandler);
